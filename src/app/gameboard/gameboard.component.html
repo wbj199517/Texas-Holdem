@@ -1,8 +1,8 @@
 <h2>Texas Hold'em - {{stateName}}</h2>
 <div class="table">
-    <div class="flopcard" *ngFor="let card of flopCard">{{card.name}}  {{card.color}}</div>
-    <div *ngIf="turnCard" [class.flopcard]="turnCard">{{turnCard.name}}  {{turnCard.color}}</div>
-    <div *ngIf="riverCard" [class.flopcard]="riverCard">{{riverCard.name}}  {{riverCard.color}}</div>
+    <div class="flopcard" *ngFor="let card of flopCard" [class.red]="card.color=='Heart'||card.color=='Diamond'">{{card.name}} {{Icon[card.color]}}</div>
+    <div *ngIf="turnCard" [class.flopcard]="turnCard" [class.red]="turnCard.color=='Heart'||turnCard.color=='Diamond'">{{turnCard.name}}  {{Icon[turnCard.color]}}</div>
+    <div *ngIf="riverCard" [class.flopcard]="riverCard" [class.red]="riverCard.color=='Heart'||riverCard.color=='Diamond'">{{riverCard.name}}  {{Icon[riverCard.color]}}</div>
 </div>
 <div *ngIf="showResult" class="modal">
     <div class="modal-content">
@@ -12,6 +12,6 @@
   
   </div>
 <div class="hand">
-    <div class="card" *ngFor="let card of pocketCard">{{card.name}}  {{card.color}}</div>
+    <div class="card" *ngFor="let card of pocketCard" [class.red]="card.color=='Heart'||card.color=='Diamond'">{{card.name}}  {{Icon[card.color]}}</div>
 </div>
 <div class="dealButton"> <button (click)="onDeal()"> {{buttonName}}</button></div>

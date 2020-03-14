@@ -23,7 +23,8 @@ export class GameboardComponent implements OnInit {
   cardResult="";
   randomCardArray = [];
   cardInGame=[];
-  
+
+   Icon = {"Heart": "♥","Diamond": "♦","Spade": "♠","Club": "♣"};
   
 
   constructor(private getCardService:GetCardService, private checkWinServce:CheckWinService) { }
