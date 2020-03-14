@@ -1,0 +1,17 @@
+<h2>Texas Hold'em - {{stateName}}</h2>
+<div class="table">
+    <div class="flopcard" *ngFor="let card of flopCard">{{card.name}}  {{card.color}}</div>
+    <div *ngIf="turnCard" [class.flopcard]="turnCard">{{turnCard.name}}  {{turnCard.color}}</div>
+    <div *ngIf="riverCard" [class.flopcard]="riverCard">{{riverCard.name}}  {{riverCard.color}}</div>
+</div>
+<div *ngIf="showResult" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closePopWindow()">&times;</span>
+        <p>You have a {{cardResult}}!</p>
+      </div>
+  
+  </div>
+<div class="hand">
+    <div class="card" *ngFor="let card of pocketCard">{{card.name}}  {{card.color}}</div>
+</div>
+<div class="dealButton"> <button (click)="onDeal()"> {{buttonName}}</button></div>
